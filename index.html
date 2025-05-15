@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts - Rambla -->
+    <link href="https://fonts.googleapis.com/css2?family=Rambla:wght@400;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#education">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-md-6" data-aos="fade-right" data-aos-duration="1000">
+                    <h1 class="display-4 fw-bold">Hello, I'm <span class="highlight">Eaint Thiri Mon</span></h1>
+                    <h2 class="mb-4">Full-Stack Developer & UI/UX Designer</h2>
+                    <p class="lead mb-4">I build visually compelling and user-focused web solutions that combine intuitive interfaces with efficient backend integration.</p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary me-3">View My Work</a>
+                        <a href="#contact" class="btn btn-outline">Contact Me</a>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center" data-aos="fade-left" data-aos-duration="1000">
+                    <img src="img/profile-placeholder.png" alt="Profile Image" class="img-fluid hero-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>About Me</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-md-5 mb-4 mb-md-0" data-aos="fade-right">
+                    <img src="img/about-placeholder.jpg" alt="About Me" class="img-fluid rounded-3 about-image">
+                </div>
+                <div class="col-md-7" data-aos="fade-left">
+                <h3>Who am I?</h3>
+                <p>I am a passionate full-stack developer and UI/UX designer with a strong focus on crafting clean, intuitive, and impactful digital experiences. I take pride in transforming creative concepts into functional, user-centered web applications that seamlessly integrate both frontend and backend logic.</p>
+                <p>In addition to traditional development, I effectively utilize Generative AI tools to accelerate the design and development process. By integrating low-code and no-code solutions where appropriate, I can rapidly prototype and deliver production-ready features in significantly less time—without compromising quality or scalability.</p>
+                <p>I thrive in collaborative environments, enjoy solving complex problems under pressure, and constantly seek opportunities to innovate through technology. As I continue pursuing my degree in Computer Science, I remain committed to building solutions that are not only technically sound but also meaningful and user-focused.</p>
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="about-info">
+                                <i class="fas fa-user"></i>
+                                <div>
+                                    <h5>Name</h5>
+                                    <p>Eaint Thiri Mon</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="about-info">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <h5>Email</h5>
+                                    <p>eaintthimon3605@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="about-info">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <h5>Location</h5>
+                                    <p>Mandalay, Myanmar</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="about-info">
+                                <i class="fas fa-graduation-cap"></i>
+                                <div>
+                                    <h5>Degree</h5>
+                                    <p>HND in Computing (Pursuing)<br>BSc (Hons) in Computer Science (Upcoming)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <a href="#" class="btn btn-primary">Download CV</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>My Education</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>BSc (Hons) in Computer Science</h3>
+                        <h4>University of Roehampton London</h4>
+                        <p class="timeline-date">2025 – 2026 (Expected)</p>
+                        <p>Will commence in July 2025. This degree focuses on core computing disciplines, software engineering principles, and real-world application development.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Higher National Diploma in Computing</h3>
+                        <h4>EduClaaS Academy | Lithan</h4>
+                        <p class="timeline-date">2024 – Present</p>
+                        <p>Currently pursuing this diploma with emphasis on full-stack development, systems analysis, and collaborative project delivery using industry-relevant tools.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Foundation Diploma in Software Engineering</h3>
+                        <h4>EduClaaS Academy | Lithan</h4>
+                        <p class="timeline-date">2023</p>
+                        <p>Completed foundation-level training in software engineering concepts, problem-solving techniques, and web application development fundamentals.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section-padding">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>My Skills & Tech Stack</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h3 class="mb-4">Technical Skills</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <h5>HTML5 & CSS3</h5>
+                            <p>90%</p>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <h5>Bootstrap</h5>
+                            <p>90%</p>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <h5>JavaScript</h5>
+                            <p>60%</p>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <h5>PHP & Laravel</h5>
+                            <p>70%</p>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <h5>Java</h5>
+                            <p>70%</p>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <h5>React</h5>
+                            <p>40%</p>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Soft Skills -->
+                    <h3 class="mb-4 mt-5">Soft Skills</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <h5>Leadership</h5>
+                                    <p>70%</p>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <h5>Presentation</h5>
+                                    <p>85%</p>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="skill-info">
+                                <h5>Prompt Engineering</h5>
+                                <p>75%</p>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h3 class="mb-4">Tech Stack</h3>
+                    <div class="row tech-stack">
+                        <div class="col-3 col-md-2 mb-4">
+                            <div class="tech-icon">
+                                <i class="fab fa-html5"></i>
+                                <p>HTML5</p>
+                            </div>
+                        </div>
+                        <div class="col-3 col-md-2 mb-4">
+                            <div class="tech-icon">
+                                <i class="fab fa-css3-alt"></i>
+                                <p>CSS3</p>
+                            </div>
+                        </div>
+                        <div class="col-3 col-md-2 mb-4">
+                            <div class="tech-icon">
+                                <i class="fab fa-bootstrap"></i>
+                                <p>Bootstrap</p>
+                            </div>
+                        </div>
+                        <div class="col-3 col-md-2 mb-4">
+                            <div class="tech-icon">
+                                <i class="fab fa-js"></i>
+                                <p>JavaScript</p>
+                            </div>
+                        </div>
+                        <div class="col-3 col-md-2 mb-4">
+                            <div class="tech-icon">
+                                <i class="fab fa-php"></i>
+                                <p>PHP</p>
+                            </div>
+                        </div>
+                        <div class="col-3 col-md-2 mb-4">
+                            <div class="tech-icon">
+                                <i class="fab fa-laravel"></i>
+                                <p>Laravel</p>
+                            </div>
+                        </div>
+                        <div class="col-3 col-md-2 mb-4">
+                            <div class="tech-icon">
+                                <i class="fab fa-java"></i>
+                                <p>Java</p>
+                            </div>
+                        </div>
+                        <div class="col-3 col-md-2 mb-4">
+                            <div class="tech-icon">
+                                <i class="fab fa-react"></i>
+                                <p>React</p>
+                            </div>
+                        </div>
+                        <div class="col-3 col-md-2 mb-4">
+                            <div class="tech-icon">
+                                <i class="fab fa-git-alt"></i>
+                                <p>Git</p>
+                            </div>
+                        </div>
+                        <div class="col-3 col-md-2 mb-4">
+                            <div class="tech-icon">
+                                <i class="fab fa-figma"></i>
+                                <p>Figma</p>
+                            </div>
+                        </div>
+                        <div class="col-3 col-md-2 mb-4">
+                            <div class="tech-icon">
+                                <i class="fas fa-robot"></i>
+                                <p>AI</p>
+                            </div>
+                        </div>
+                        <div class="col-3 col-md-2 mb-4">
+                            <div class="tech-icon">
+                                <i class="fas fa-comments"></i>
+                                <p>Prompting</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Projects Section -->
+    <section id="projects" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>My Projects</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="zoom-in">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="img/project1-placeholder.jpg" alt="Project 1" class="img-fluid">
+                        </div>
+                        <div class="project-content">
+                            <h4>E-commerce Website</h4>
+                            <p>A fully responsive e-commerce platform built with HTML, CSS, JavaScript, and Bootstrap.</p>
+                            <div class="project-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>Bootstrap</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn btn-sm btn-outline-primary"><i class="fas fa-link"></i> Live Demo</a>
+                                <a href="#" class="btn btn-sm btn-outline-secondary"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="img/project2-placeholder.jpg" alt="Project 2" class="img-fluid">
+                        </div>
+                        <div class="project-content">
+                            <h4>Task Management App</h4>
+                            <p>A task management application with CRUD functionality built using React.js and Firebase.</p>
+                            <div class="project-tags">
+                                <span>React</span>
+                                <span>Firebase</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn btn-sm btn-outline-primary"><i class="fas fa-link"></i> Live Demo</a>
+                                <a href="#" class="btn btn-sm btn-outline-secondary"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="img/project3-placeholder.jpg" alt="Project 3" class="img-fluid">
+                        </div>
+                        <div class="project-content">
+                            <h4>Weather Dashboard</h4>
+                            <p>A weather application that fetches real-time data from a weather API and displays forecasts.</p>
+                            <div class="project-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>API</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn btn-sm btn-outline-primary"><i class="fas fa-link"></i> Live Demo</a>
+                                <a href="#" class="btn btn-sm btn-outline-secondary"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="img/project4-placeholder.jpg" alt="Project 4" class="img-fluid">
+                        </div>
+                        <div class="project-content">
+                            <h4>Portfolio Website</h4>
+                            <p>A responsive portfolio website showcasing my projects and skills using modern web technologies.</p>
+                            <div class="project-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>Bootstrap</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn btn-sm btn-outline-primary"><i class="fas fa-link"></i> Live Demo</a>
+                                <a href="#" class="btn btn-sm btn-outline-secondary"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="img/project5-placeholder.jpg" alt="Project 5" class="img-fluid">
+                        </div>
+                        <div class="project-content">
+                            <h4>Recipe Finder App</h4>
+                            <p>An application that allows users to search for recipes based on ingredients they have.</p>
+                            <div class="project-tags">
+                                <span>React</span>
+                                <span>API</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn btn-sm btn-outline-primary"><i class="fas fa-link"></i> Live Demo</a>
+                                <a href="#" class="btn btn-sm btn-outline-secondary"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="img/project6-placeholder.jpg" alt="Project 6" class="img-fluid">
+                        </div>
+                        <div class="project-content">
+                            <h4>Blog Platform</h4>
+                            <p>A full-stack blog platform with user authentication and content management capabilities.</p>
+                            <div class="project-tags">
+                                <span>Node.js</span>
+                                <span>Express</span>
+                                <span>MongoDB</span>
+                                <span>EJS</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn btn-sm btn-outline-primary"><i class="fas fa-link"></i> Live Demo</a>
+                                <a href="#" class="btn btn-sm btn-outline-secondary"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Contact Me</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-5 mb-4 mb-md-0" data-aos="fade-right">
+                    <div class="contact-info">
+                        <h3>Get in Touch</h3>
+                        <p>Feel free to reach out to me for any inquiries, collaborations, or just to say hello!</p>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h5>Email</h5>
+                                <p>your.email@example.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h5>Phone</h5>
+                                <p>+1 (123) 456-7890</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h5>Location</h5>
+                                <p>Your City, Country</p>
+                            </div>
+                        </div>
+                        <div class="social-links mt-4">
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7" data-aos="fade-left">
+                    <form id="contactForm" class="contact-form">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" id="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h3>Your Name</h3>
+                    <p>Web Developer & Designer</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="copyright">
+                        <p>&copy; 2023 Your Name. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>

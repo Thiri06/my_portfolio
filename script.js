@@ -1,0 +1,171 @@
+// Initialize AOS (Animate On Scroll)
+AOS.init({
+    duration: 1000,
+    once: true,
+    mirror: false
+});
+
+// Navbar scroll effect
+window.addEventListener('scroll', function () {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+// Active navigation link based on scroll position
+window.addEventListener('scroll', function () {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    let current = '';
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+
+        if (pageYOffset >= sectionTop - 200) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+        }
+    });
+});
+
+// Back to top button
+const backToTopButton = document.querySelector('.back-to-top');
+
+window.addEventListener('scroll', function () {
+    if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('active');
+    } else {
+        backToTopButton.classList.remove('active');
+    }
+});
+
+backToTopButton.addEventListener('click', function (e) {
+    e.preventDefault();
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            const targetPosition = targetElement.offsetTop - navbarHeight;
+
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+
+            // Close mobile menu if open
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+            if (navbarCollapse.classList.contains('show')) {
+                navbarCollapse.classList.remove('show');
+            }
+        }
+    });
+});
+
+// Form submission
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Get form values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+
+        // Here you would typically send the form data to a server
+        // For now, we'll just log it to the console
+        console.log('Form submitted:', { name, email, subject, message });
+
+        // Show success message (you can replace this with a more elegant solution)
+        alert('Thank you for your message! I will get back to you soon.');
+
+        // Reset form
+        contactForm.reset();
+    });
+}
+
+// Project filter functionality (if you want to add filtering to projects)
+document.addEventListener('DOMContentLoaded', function () {
+    // You can add project filtering functionality here if needed
+    // For example, filtering projects by technology or category
+});
+
+// Skills progress animation
+function animateSkills() {
+    const skillsSection = document.getElementById('skills');
+    if (!skillsSection) return;
+
+    const progressBars = document.querySelectorAll('.progress-bar');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                progressBars.forEach(bar => {
+                    const width = bar.getAttribute('aria-valuenow') + '%';
+                    bar.style.width = width;
+                });
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    observer.observe(skillsSection);
+}
+
+// Call the function when the page loads
+window.addEventListener('load', animateSkills);
+
+// Typing effect for hero section (optional enhancement)
+document.addEventListener('DOMContentLoaded', function () {
+    const heroTitle = document.querySelector('.hero-section h1');
+    if (!heroTitle) return;
+
+    // You can implement a typing effect here if desired
+    // This would require a library like Typed.js or a custom implementation
+});
+
+// Project hover effect enhancement
+const projectCards = document.querySelectorAll('.project-card');
+projectCards.forEach(card => {
+    card.addEventListener('mouseenter', function () {
+        this.querySelector('.project-img img').style.transform = 'scale(1.1)';
+    });
+
+    card.addEventListener('mouseleave', function () {
+        this.querySelector('.project-img img').style.transform = 'scale(1)';
+    });
+});
+
+// Preloader (optional)
+window.addEventListener('load', function () {
+    // If you want to add a preloader, you can hide it here when the page loads
+    // const preloader = document.querySelector('.preloader');
+    // if (preloader) {
+    //     preloader.style.display = 'none';
+    // }
+});
