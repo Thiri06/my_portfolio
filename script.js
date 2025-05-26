@@ -96,16 +96,43 @@ if (contactForm) {
         const email = document.getElementById('email').value;
         const subject = document.getElementById('subject').value;
         const message = document.getElementById('message').value;
+        const formStatus = document.getElementById('form-status');
 
-        // Here you would typically send the form data to a server
-        // For now, we'll just log it to the console
-        console.log('Form submitted:', { name, email, subject, message });
+        // Show sending message
+        formStatus.innerHTML = '<p class="text-info">Sending message...</p>';
 
-        // Show success message (you can replace this with a more elegant solution)
-        alert('Thank you for your message! I will get back to you soon.');
+        // Get form data
+        const formData = new FormData(contactForm);
 
-        // Reset form
-        contactForm.reset();
+        // Send form data to Formspree
+        fetch(contactForm.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+            .then(response => {
+                if (response.ok) {
+                    // Success message
+                    formStatus.innerHTML = '<p class="text-success">Thanks for your message! I\'ll get back to you soon.</p>';
+                    contactForm.reset();
+                } else {
+                    // Error handling
+                    response.json().then(data => {
+                        if (Object.hasOwnProperty.call(data, 'errors')) {
+                            formStatus.innerHTML = '<p class="text-danger">Sorry, there was an error sending your message. Please try again later.</p>';
+                        } else {
+                            formStatus.innerHTML = '<p class="text-danger">Oops! There was a problem submitting your form.</p>';
+                        }
+                    });
+                }
+            })
+            .catch(error => {
+                // Network error
+                formStatus.innerHTML = '<p class="text-danger">There was a network error. Please try again later.</p>';
+                console.error('Error:', error);
+            });
     });
 }
 
