@@ -214,10 +214,49 @@ a:hover {
 }
 
 .hero-image {
-    max-width: 80%;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    margin: 0 auto;
+    display: block;
     animation: float 6s ease-in-out infinite;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    border: 3px solid var(--primary-color);
+}
+
+/* Hero Image Container with LED Effect */
+.hero-image-container {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image-container::before,
+.hero-image-container::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
+}
+
+.hero-image-container::before {
+    animation: led-rotate 3s linear infinite;
+}
+
+.hero-image-container::after {
+    animation: led-rotate 3s linear infinite reverse;
+    background: var(--secondary-color);
+    box-shadow: 0 0 10px var(--secondary-color), 0 0 20px var(--secondary-color);
+    animation-delay: -1.5s;
 }
 
 @keyframes float {
@@ -269,12 +308,92 @@ a:hover {
 
 /* About Section */
 .about-image {
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    margin: 0 auto;
+    display: block;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
     transition: var(--transition);
+    border: 3px solid var(--secondary-color);
 }
 
 .about-image:hover {
-    transform: translateY(-10px);
+    transform: translateY(-10px) scale(1.05);
+}
+
+/* About Image Container with LED Effect */
+.about-image-container {
+    position: relative;
+    width: 330px;
+    height: 330px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* LED Lights for About */
+.about-image-container::before,
+.about-image-container::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    box-shadow: 0 0 8px var(--secondary-color), 0 0 16px var(--secondary-color);
+}
+
+.about-image-container::before {
+    animation: led-rotate 4s linear infinite;
+}
+
+.about-image-container::after {
+    animation: led-rotate 4s linear infinite reverse;
+    background: var(--accent-color);
+    box-shadow: 0 0 8px var(--accent-color), 0 0 16px var(--accent-color);
+    animation-delay: -2s;
+}
+
+/* LED Rotation Animations */
+/* LED Rotation Animation */
+@keyframes led-rotate {
+    0% {
+        transform: rotate(0deg) translateX(160px) rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg) translateX(160px) rotate(-360deg);
+    }
+}
+
+/* Enhanced Float Animation for Hero */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Add more LED lights using JavaScript-generated elements */
+.led-light {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    box-shadow: 0 0 8px currentColor, 0 0 16px currentColor;
+    animation: led-rotate linear infinite;
 }
 
 .about-info {
@@ -303,6 +422,42 @@ a:hover {
 
 .about-info p {
     margin-bottom: 0;
+}
+
+/* Inline Age Counter Styling */
+.inline-age-counter {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 8px;
+    font-weight: 600;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.inline-age-counter:hover {
+    background: linear-gradient(135deg, rgba(255, 0, 135, 0.15), rgba(0, 194, 203, 0.15));
+    transform: translateY(-1px);
+}
+
+.inline-age-counter i {
+    margin-right: 6px;
+    color: var(--secondary-color);
+    font-size: 0.9em;
+}
+
+.inline-age-counter #inline-age-years {
+    color: var(--primary-color);
+    font-weight: 700;
+    animation: subtle-pulse 3s ease-in-out infinite;
+}
+
+@keyframes subtle-pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
 }
 
 /* Education Section */
@@ -776,6 +931,36 @@ a:hover {
         padding: 70px 0;
     }
 
+    .hero-image-container {
+        width: 280px;
+        height: 280px;
+    }
+
+    .about-image-container {
+        width: 260px;
+        height: 260px;
+    }
+
+    .hero-image {
+        width: 230px;
+        height: 230px;
+    }
+
+    .about-image {
+        width: 210px;
+        height: 210px;
+    }
+
+    @keyframes led-rotate {
+        0% {
+            transform: rotate(0deg) translateX(130px) rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg) translateX(130px) rotate(-360deg);
+        }
+    }
+
     .hero-section h1 {
         font-size: 2.5rem;
     }
@@ -786,6 +971,22 @@ a:hover {
 
     .section-title h2 {
         font-size: 2rem;
+    }
+
+    .age-number {
+        font-size: 2.5rem;
+    }
+
+    .age-details {
+        gap: 10px;
+    }
+
+    .age-detail-item {
+        min-width: 60px;
+    }
+
+    .detail-number {
+        font-size: 1.3rem;
     }
 
     .tech-icons-container {
@@ -824,5 +1025,51 @@ a:hover {
 
     .hero-buttons .btn:last-child {
         margin-bottom: 0;
+    }
+
+    .hero-image-container {
+        width: 250px;
+        height: 250px;
+    }
+
+    .about-image-container {
+        width: 230px;
+        height: 230px;
+    }
+
+    .hero-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .about-image {
+        width: 180px;
+        height: 180px;
+    }
+
+    @keyframes led-rotate {
+        0% {
+            transform: rotate(0deg) translateX(110px) rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg) translateX(110px) rotate(-360deg);
+        }
+    }
+
+    .age-counter-section {
+        padding: 20px 15px;
+    }
+
+    .age-number {
+        font-size: 2rem;
+    }
+
+    .detail-number {
+        font-size: 1.1rem;
+    }
+
+    .detail-label {
+        font-size: 0.8rem;
     }
 }

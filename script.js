@@ -85,6 +85,77 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Create LED lights around images
+function createLEDLights() {
+    const heroContainer = document.querySelector('.hero-image-container');
+    const aboutContainer = document.querySelector('.about-image-container');
+
+    if (heroContainer) {
+        createLEDs(heroContainer, 6, 'hero'); // 6 LED lights for hero
+    }
+
+    if (aboutContainer) {
+        createLEDs(aboutContainer, 4, 'about'); // 4 LED lights for about
+    }
+}
+
+function createLEDs(container, count, type) {
+    const colors = ['var(--primary-color)', 'var(--secondary-color)', 'var(--accent-color)'];
+    const radius = type === 'hero' ? 160 : 140;
+
+    for (let i = 0; i < count; i++) {
+        const led = document.createElement('div');
+        led.className = 'led-light';
+        led.style.color = colors[i % colors.length];
+        led.style.background = colors[i % colors.length];
+        led.style.animationDuration = `${3 + i * 0.5}s`;
+        led.style.animationDelay = `${-i * 0.5}s`;
+        led.style.transform = `rotate(${(360 / count) * i}deg) translateX(${radius}px) rotate(-${(360 / count) * i}deg)`;
+
+        container.appendChild(led);
+    }
+}
+
+// Call the function when the page loads
+document.addEventListener('DOMContentLoaded', function () {
+    createLEDLights();
+});
+
+// Age Counter Function (Updated for inline display)
+function updateInlineAgeCounter() {
+    // Your birthday: March 6, 2005
+    const birthDate = new Date('2005-03-06T00:00:00');
+    const now = new Date();
+
+    // Calculate the difference in milliseconds
+    const diffInMs = now - birthDate;
+
+    // Convert to years with decimal precision
+    const years = (diffInMs / (1000 * 60 * 60 * 24 * 365.25)).toFixed(8);
+
+    // Update the DOM element
+    const inlineAgeYears = document.getElementById('inline-age-years');
+    if (inlineAgeYears) {
+        inlineAgeYears.textContent = Math.floor(years);
+    }
+}
+
+
+// Start the age counter when the page loads
+document.addEventListener('DOMContentLoaded', function () {
+    // Update inline age counter immediately
+    updateInlineAgeCounter();
+
+    // Update every minute (since we're only showing years, no need for every second)
+    setInterval(updateInlineAgeCounter, 60000);
+
+    // Call existing LED function if it exists
+    if (typeof createLEDLights === 'function') {
+        createLEDLights();
+    }
+});
+
+
 // Form submission
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
